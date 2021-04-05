@@ -4,9 +4,8 @@
 code. It must have either one or two arguments, both int, and must
 return a 32-bit int quantity. */
 
-int userfun(int x) {
-   if (x >= 0) return x;        // Absolute value.
-   else return -x;
+int userfun(int x) {     
+    return x * x;
 }
 
 #define NARGS 1                 // Number of args in userfun, 1 or 2.
@@ -143,17 +142,17 @@ struct {
    {neg,    1, 0, {RX,  0,  0}, "neg",   "-(",   ""     },  // Negate.
    {_not,   1, 0, {RX,  0,  0}, "not",   "~(",   ""     },  // One's-complement.
 //   {pop,    1, 0, {RX,  0,  0}, "pop",   "pop(", ""     },  // Population count.
-// {nlz,    1, 0, {RX,  0,  0}, "nlz",   "nlz(", ""     },  // Num leading 0's.
-// {rev,    1, 0, {RX,  0,  0}, "rev",   "rev(", ""     },  // Bit reversal.
+//   {nlz,    1, 0, {RX,  0,  0}, "nlz",   "nlz(", ""     },  // Num leading 0's.
+//   {rev,    1, 0, {RX,  0,  0}, "rev",   "rev(", ""     },  // Bit reversal.
    {add,    2, 1, {RX,  2,  0}, "add",   "(",    " + "  },  // Add.
    {sub,    2, 0, { 2,  2,  0}, "sub",   "(",    " - "  },  // Subtract.
-   {mul,    2, 1, {RX,  3,  0}, "mul",   "(",    "*"    },  // Multiply.
-   {div,    2, 0, { 1,  3,  0}, "div",   "(",    "/"    },  // Divide signed.
-   {divu,   2, 0, { 1,  1,  0}, "divu",  "(",    " /u " },  // Divide unsigned.
+//   {mul,    2, 1, {RX,  3,  0}, "mul",   "(",    "*"    },  // Multiply.
+//   {div,    2, 0, { 1,  3,  0}, "div",   "(",    "/"    },  // Divide signed.
+//   {divu,   2, 0, { 1,  1,  0}, "divu",  "(",    " /u " },  // Divide unsigned.
    {_and,   2, 1, {RX,  2,  0}, "and",   "(",    " & "  },  // AND.
    {_or,    2, 1, {RX,  2,  0}, "or",    "(",    " | "  },  // OR.
    {_xor,   2, 1, {RX,  2,  0}, "xor",   "(",    " ^ "  },  // XOR.
-// {rotl,   2, 0, { 1,NIM,  0}, "rotl",  "(",    " <<r "},  // Rotate shift left.
+  // {rotl,   2, 0, { 1,NIM,  0}, "rotl",  "(",    " <<r "},  // Rotate shift left.
    {shl,    2, 0, { 1,NIM,  0}, "shl",   "(",    " << " },  // Shift left.
    {shr,    2, 0, { 1,NIM,  0}, "shr",   "(",    " >>u "},  // Shift right.
    {shrs,   2, 0, { 3,NIM,  0}, "shrs",  "(",    " >>s "},  // Shift right signed.
