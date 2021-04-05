@@ -22,13 +22,13 @@ NIM   = number of ordinary immediate values
 NSHIM = number of shift immediate values
 */
 
-#define MAXNEG 0x80000000
-#define MAXPOS 0x7FFFFFFF
+#define MAXNEG (int)0x80000000
+#define MAXPOS (int)0x7FFFFFFF
 #define NBSM 63                 // Shift mask.  Use 63 for mod 64
                                 // shifts, or 31 for mod 32.
 
 int trialx[] = {1, 0, -1, MAXNEG, MAXPOS, \
-   MAXNEG + 1, MAXPOS - 1, 0x01234567, 0x89ABCDEF, -2, 2, -3, 3, \
+   MAXNEG + 1, MAXPOS - 1, (int)0x01234567, (int)0x89ABCDEF, -2, 2, -3, 3, \
    -64, 64, -5, -31415};
 #if NARGS == 2
    int trialy[] = {0};
